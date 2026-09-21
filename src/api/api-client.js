@@ -13,7 +13,6 @@ module.exports.getWeatherForecast = async function(names, countDays = 3) {
 }
 
 async function getWeatherForCity(name, countDays){
-    if (countDays < 1) throw "Количество дней меньше должно быть больше одного!"
     if (name.length === 0) throw "Название города не должно быть пустой строкой!"
 
     const data_coords = await doFetchAndGetJson(process.env.COORDS_URL.replace("{city}", encodeURIComponent(name)))
