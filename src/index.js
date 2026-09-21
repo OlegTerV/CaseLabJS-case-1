@@ -1,3 +1,4 @@
+require('dotenv').config({ path: 'src/.env'})
 const {getWeatherForecast} = require('./api/api-client')
 const {formatData} = require('./format/data-mapper')
 const {customPrint} = require('./format/print-data')
@@ -32,11 +33,7 @@ async function main() {
 
     const weatherForecast = await getWeatherForecast(cities.split(",").map(it => it.trim()), countDays)
     const formatWeatherForecast = formatData(weatherForecast)
-    try {
-        recordData(formatWeatherForecast)
-    } catch (error) {
-        printError(error)
-    }
+    await recordData(formatWeatherForecast)
     customPrint(formatWeatherForecast)
     process.exit(0)
 }
