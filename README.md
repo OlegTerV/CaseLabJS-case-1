@@ -27,12 +27,12 @@ copy .env.example .env
 `
 2. Задайте значения переменным окружения:
 
-|Переменная|Тип|
-|:---------|:-|
-|COORDS_URL|string|
-|WEATHER_URL|string|
-|TIMEOUT|int|
-|REPORT_PATH|string|
+|Переменная|Тип|Описание|
+|:---------|:-|:-------|
+|COORDS_URL|string|API open-meteo для получения координат города|
+|WEATHER_URL|string|API open-meteo для получения прогноза погоды|
+|TIMEOUT|int|время ожидания ответа на запрос|
+|REPORT_PATH|string|каталог для сохранения полученных прогнозов погоды|
 
 ### Запуск
 Команда запуска:
