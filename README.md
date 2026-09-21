@@ -23,6 +23,10 @@ npm install
 ### Настройка
 1. Скопируйте файл с заглушками:
 `
+cd src
+`
+,
+`
 copy .env.example .env
 `
 2. Задайте значения переменным окружения:
@@ -35,6 +39,10 @@ copy .env.example .env
 |REPORT_PATH|string|
 
 ### Запуск
+После настройки перменных окружения вернитесь в корневой каталог (CaseLabJS-case-1-main):
+```cmd
+cd ..
+```
 Команда запуска:
 ```cmd
 node src/index.js --city <city> [city_2,...] [--days<days count>]
