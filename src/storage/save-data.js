@@ -20,4 +20,13 @@ module.exports.recordData = async function(data) {
     )
 }
 
+module.exports.createDir = async function () {
+    const dirPath = path.join(__dirname, "./../../reports")
+    try {
+        await fs.mkdir(dirPath, {recursive: true})
+    } catch (error) {
+        console.log(`Не удалось создать каталог для экспорта`)
+    }
+}
+
 //например, REPORT_PATH = REPORT_PATH = ./../../reports
