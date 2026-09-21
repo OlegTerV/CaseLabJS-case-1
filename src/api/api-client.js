@@ -1,5 +1,3 @@
-require('dotenv').config({ path: 'src/.env'})
-
 module.exports.getWeatherForecast = async function(names, countDays = 3) {
     if (!(parseInt(process.env.TIMEOUT, 10))) {
         console.log("Переменная окружения TIMEOUT задана некорректно")
