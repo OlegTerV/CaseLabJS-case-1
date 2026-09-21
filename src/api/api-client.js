@@ -67,7 +67,14 @@ async function doFetchAndGetJson(url){
     }
 
     if (!response.ok) {
-        throw `HTTP request error! Статус: ${response.status}.`
+        
+        if ((response.status > 399) && (response.status < 500)) {
+            throw `Клиентская ошибка.`
+        } else if ((response.status > 499) && (response.status < 600)) {
+            throw `Серверная ошибка.`
+        } else {
+            throw `HTTP request error! Статус: ${response.status}.`
+        }
     }
 
     let data
