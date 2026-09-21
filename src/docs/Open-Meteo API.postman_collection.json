@@ -1,0 +1,547 @@
+{
+  "info": {
+    "_postman_id": "d2695568-7546-4b57-9985-6914e5e19133",
+    "name": "Open-Meteo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58345243",
+    "_collection_link": "https://go.postman.co/collection/58345243-d2695568-7546-4b57-9985-6914e5e19133?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get coords",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://geocoding-api.open-meteo.com/v1/search?name={{city3}}&count=a&language=ru&format\n=json",
+          "protocol": "https",
+          "host": [
+            "geocoding-api",
+            "open-meteo",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "{{city3}}"
+            },
+            {
+              "key": "count",
+              "value": "a"
+            },
+            {
+              "key": "language",
+              "value": "ru"
+            },
+            {
+              "key": "format\n",
+              "value": "json"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Succes get",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://geocoding-api.open-meteo.com/v1/search?name={{city1}}&count=1&language=ru&format\n=json",
+              "protocol": "https",
+              "host": [
+                "geocoding-api",
+                "open-meteo",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "{{city1}}"
+                },
+                {
+                  "key": "count",
+                  "value": "1"
+                },
+                {
+                  "key": "language",
+                  "value": "ru"
+                },
+                {
+                  "key": "format\n",
+                  "value": "json"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 21 Sep 2026 21:10:05 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-length",
+              "value": "266"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "x-encoding-time",
+              "value": "0.002181529998779297 ms"
+            },
+            {
+              "key": "content-encoding",
+              "value": "deflate"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"results\": [\n    {\n      \"id\": 501175,\n      \"name\": \"Ростов-на-Дону\",\n      \"latitude\": 47.21997,\n      \"longitude\": 39.70769,\n      \"elevation\": 54,\n      \"feature_code\": \"PPLA\",\n      \"country_code\": \"RU\",\n      \"admin1_id\": 501165,\n      \"timezone\": \"Europe/Moscow\",\n      \"population\": 1130305,\n      \"country_id\": 2017370,\n      \"country\": \"Россия\",\n      \"admin1\": \"Ростовская Область\"\n    }\n  ],\n  \"generationtime_ms\": 0.14150143\n}"
+        },
+        {
+          "name": "City is undefind",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://geocoding-api.open-meteo.com/v1/search?name={{city3}}&count=1&language=ru&format\n=json",
+              "protocol": "https",
+              "host": [
+                "geocoding-api",
+                "open-meteo",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "{{city3}}"
+                },
+                {
+                  "key": "count",
+                  "value": "1"
+                },
+                {
+                  "key": "language",
+                  "value": "ru"
+                },
+                {
+                  "key": "format\n",
+                  "value": "json"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 21 Sep 2026 21:14:56 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-length",
+              "value": "40"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "x-encoding-time",
+              "value": "0.0013589859008789062 ms"
+            },
+            {
+              "key": "content-encoding",
+              "value": "deflate"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"generationtime_ms\": 0.16498566\n}"
+        },
+        {
+          "name": "Bad request - invalid parameters",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://geocoding-api.open-meteo.com/v1/search?name={{city3}}&count=a&language=ru&format\n=json",
+              "protocol": "https",
+              "host": [
+                "geocoding-api",
+                "open-meteo",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "{{city3}}"
+                },
+                {
+                  "key": "count",
+                  "value": "a"
+                },
+                {
+                  "key": "language",
+                  "value": "ru"
+                },
+                {
+                  "key": "format\n",
+                  "value": "json"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 21 Sep 2026 21:16:14 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-length",
+              "value": "93"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "content-encoding",
+              "value": "deflate"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": true,\n  \"reason\": \"Value was not of type 'Int' at path 'count'. Data found at 'count' was not Int.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get weather forecast",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.open-meteo.com/v1/forecast?latitude={{latUndefind}}&longitude={{lonUndefind}}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days={{daysCount}}&timezone=auto",
+          "protocol": "https",
+          "host": [
+            "api",
+            "open-meteo",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "forecast"
+          ],
+          "query": [
+            {
+              "key": "latitude",
+              "value": "{{latUndefind}}"
+            },
+            {
+              "key": "longitude",
+              "value": "{{lonUndefind}}"
+            },
+            {
+              "key": "daily",
+              "value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+            },
+            {
+              "key": "forecast_days",
+              "value": "{{daysCount}}"
+            },
+            {
+              "key": "timezone",
+              "value": "auto"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success get",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.open-meteo.com/v1/forecast?latitude={{latRoD}}&longitude={{lonRoD}}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days={{daysCount}}&timezone=auto",
+              "protocol": "https",
+              "host": [
+                "api",
+                "open-meteo",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "forecast"
+              ],
+              "query": [
+                {
+                  "key": "latitude",
+                  "value": "{{latRoD}}"
+                },
+                {
+                  "key": "longitude",
+                  "value": "{{lonRoD}}"
+                },
+                {
+                  "key": "daily",
+                  "value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+                },
+                {
+                  "key": "forecast_days",
+                  "value": "{{daysCount}}"
+                },
+                {
+                  "key": "timezone",
+                  "value": "auto"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 21 Sep 2026 21:19:39 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "content-encoding",
+              "value": "deflate"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"latitude\": 47.25,\n  \"longitude\": 39.6875,\n  \"generationtime_ms\": 0.06020069122314453,\n  \"utc_offset_seconds\": 10800,\n  \"timezone\": \"Europe/Moscow\",\n  \"timezone_abbreviation\": \"GMT+3\",\n  \"elevation\": 36,\n  \"daily_units\": {\n    \"time\": \"iso8601\",\n    \"temperature_2m_max\": \"°C\",\n    \"temperature_2m_min\": \"°C\",\n    \"precipitation_sum\": \"mm\"\n  },\n  \"daily\": {\n    \"time\": [\n      \"2026-09-22\",\n      \"2026-09-23\",\n      \"2026-09-24\"\n    ],\n    \"temperature_2m_max\": [\n      24.7,\n      25.5,\n      18.4\n    ],\n    \"temperature_2m_min\": [\n      15.1,\n      17.5,\n      13.1\n    ],\n    \"precipitation_sum\": [\n      1,\n      2.6,\n      6.9\n    ]\n  }\n}"
+        },
+        {
+          "name": "Bad request - invalid parameters",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.open-meteo.com/v1/forecast?latitude=asd&longitude={{lonRoD}}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days={{daysCount}}&timezone=auto",
+              "protocol": "https",
+              "host": [
+                "api",
+                "open-meteo",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "forecast"
+              ],
+              "query": [
+                {
+                  "key": "latitude",
+                  "value": "asd"
+                },
+                {
+                  "key": "longitude",
+                  "value": "{{lonRoD}}"
+                },
+                {
+                  "key": "daily",
+                  "value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+                },
+                {
+                  "key": "forecast_days",
+                  "value": "{{daysCount}}"
+                },
+                {
+                  "key": "timezone",
+                  "value": "auto"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 21 Sep 2026 21:20:44 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-length",
+              "value": "88"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "content-encoding",
+              "value": "deflate"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"reason\": \"Invalid value: Cannot initialize Float from invalid String value asd\",\n  \"error\": true\n}"
+        },
+        {
+          "name": "Bad request - invalid parameters 2",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.open-meteo.com/v1/forecast?latitude={{latUndefind}}&longitude={{lonUndefind}}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days={{daysCount}}&timezone=auto",
+              "protocol": "https",
+              "host": [
+                "api",
+                "open-meteo",
+                "com"
+              ],
+              "path": [
+                "v1",
+                "forecast"
+              ],
+              "query": [
+                {
+                  "key": "latitude",
+                  "value": "{{latUndefind}}"
+                },
+                {
+                  "key": "longitude",
+                  "value": "{{lonUndefind}}"
+                },
+                {
+                  "key": "daily",
+                  "value": "temperature_2m_max,temperature_2m_min,precipitation_sum"
+                },
+                {
+                  "key": "forecast_days",
+                  "value": "{{daysCount}}"
+                },
+                {
+                  "key": "timezone",
+                  "value": "auto"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Mon, 21 Sep 2026 21:21:31 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-length",
+              "value": "93"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "content-encoding",
+              "value": "deflate"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"error\": true,\n  \"reason\": \"Latitude must be in range of -90 to 90°. Given: 1.2312312e+08.\"\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "city1",
+      "value": ""
+    },
+    {
+      "key": "city2",
+      "value": ""
+    },
+    {
+      "key": "city3",
+      "value": ""
+    },
+    {
+      "key": "latMoscow",
+      "value": ""
+    },
+    {
+      "key": "lonMoscow",
+      "value": ""
+    },
+    {
+      "key": "latRoD",
+      "value": ""
+    },
+    {
+      "key": "lonRoD",
+      "value": ""
+    },
+    {
+      "key": "latUndefind",
+      "value": ""
+    },
+    {
+      "key": "lonUndefind",
+      "value": ""
+    },
+    {
+      "key": "daysCount",
+      "value": ""
+    }
+  ]
+}
