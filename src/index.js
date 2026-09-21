@@ -2,7 +2,7 @@ require('dotenv').config({ path: 'src/.env'})
 const {getWeatherForecast} = require('./api/api-client')
 const {formatData} = require('./format/data-mapper')
 const {customPrint} = require('./format/print-data')
-const {recordData} = require('./storage/save-data')
+const {recordData, createDir} = require('./storage/save-data')
 
 async function main() {
     let cities = ""
@@ -31,6 +31,7 @@ async function main() {
         process.exit(1)
     }
 
+    await createDir()
     const weatherForecast = await getWeatherForecast(cities.split(",").map(it => it.trim()), countDays)
     const formatWeatherForecast = formatData(weatherForecast)
     await recordData(formatWeatherForecast)
